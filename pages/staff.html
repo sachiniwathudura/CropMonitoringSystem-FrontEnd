@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3 col-lg-2 bg-light sidebar">
+            <div class="profile-section text-center mt-4">
+                <img src="/img/profileimg.jpg" alt="Profile Picture" class="rounded-circle" width="60">
+                <h5>Sachini</h5>
+                <p>Manager</p>
+            </div>
+            <ul class="nav flex-column mt-4">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Field Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Crops</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Equipment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Vehicle</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Staff</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-9 col-lg-10 main-content">
+            <h1 class="my-4 text-center">Staff Management</h1>
+
+            <!-- Search Bar and Add Button -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <input type="text" class="form-control w-50" placeholder="Search Staff">
+                <button class="btn btn-success" data-toggle="modal" data-target="#addStaffModal">Add Staff</button>
+            </div>
+
+            <!-- Staff Table -->
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                <tr>
+                    <th>Select</th>
+                    <th>Staff ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Designation</th>
+                    <th>Gender</th>
+                    <th>Join Date</th>
+                    <th>DOB</th>
+                    <th>Contact No</th>
+                    <th>Email</th>
+                    <th>Equipment Code</th>
+                    <th>Vehicle Code</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Staff data rows will go here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Add Staff Modal -->
+<div class="modal fade" id="addStaffModal" tabindex="-1" aria-labelledby="addStaffModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addStaffModalLabel">Staff Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="staffForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="staffId">Staff ID</label>
+                            <input type="text" class="form-control" id="staffId" placeholder="Enter Staff ID">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="designation">Designation</label>
+                            <input type="text" class="form-control" id="designation" placeholder="Enter Designation">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="gender">Gender</label>
+                            <select class="form-control" id="gender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="joinDate">Join Date</label>
+                            <input type="date" class="form-control" id="joinDate">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" class="form-control" id="dob">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="contactNo">Contact No</label>
+                            <input type="text" class="form-control" id="contactNo" placeholder="Enter Contact Number">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="equipmentCode">Equipment Code</label>
+                            <input type="text" class="form-control" id="equipmentCode" placeholder="Enter Equipment Code">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleCode">Vehicle Code</label>
+                        <input type="text" class="form-control" id="vehicleCode" placeholder="Enter Vehicle Code">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="saveStaff()">Save</button>
+                <button type="button" class="btn btn-info" onclick="updateStaff()">Update</button>
+                <button type="button" class="btn btn-warning" onclick="getAllStaff()">Get All</button>
+                <button type="button" class="btn btn-danger" onclick="deleteStaff()">Delete</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script src="/controller/staff.js"></script>
+</body>
+</html>
