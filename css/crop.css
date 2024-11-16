@@ -1,0 +1,44 @@
+/*!* Sidebar Styles *!*/
+/*body{*/
+/*    background-color: #d1fcd7;*/
+/*}*/
+/*.sidebar {*/
+/*    background-color: #c6e7a6; !* Change this to your desired background color *!*/
+/*    color: #090909; !* Text color *!*/
+/*    height: 100vh; !* Full height *!*/
+/*    padding-top: 20px;*/
+/*}*/
+
+/*.sidebar .nav-link {*/
+/*    color: #1e931e;*/
+/*    font-weight: 700;*/
+/*    padding: 15px;*/
+/*    transition: background-color 0.3s ease;*/
+/*}*/
+
+/*.sidebar .nav-link:hover {*/
+/*    background-color: #a9e8ac; !* Background color on hover *!*/
+/*    color: #ffffff;*/
+/*}*/
+
+/*.sidebar .nav-link.active {*/
+/*    background-color: #bcfab5; !* Background color for active link *!*/
+/*    color: #ffffff;*/
+/*}*/
+
+/*.profile-section {*/
+/*    color: #070707;*/
+/*}*/
+
+/*.thead{*/
+/*    background-color: #52a252;*/
+/*    color: #0060c2;*/
+/*}*/
+/*.tBody{*/
+/*    background-color: #f4faf4;*/
+/*}*/
+
+/*.profile-section img {*/
+/*    border: 2px solid #ecf0f1;*/
+/*    margin-bottom: 10px;*/
+/*}*/
