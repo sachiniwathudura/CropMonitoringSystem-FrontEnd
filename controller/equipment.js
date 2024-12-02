@@ -47,5 +47,23 @@ function resetForm() {
     $('#equipmentForm')[0].reset();
     selectedRow = null;
 }
+function search() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const table = document.getElementById('cropTable');
+    const rows = table.getElementsByTagName('tr');
 
+    for (let i = 1; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName('td');
+        let match = false;
+
+        for (let j = 0; j < cells.length; j++) {
+            if (cells[j].textContent.toLowerCase().includes(searchInput)) {
+                match = true;
+                break;
+            }
+        }
+
+        rows[i].style.display = match ? '' : 'none';
+    }
+}
 
