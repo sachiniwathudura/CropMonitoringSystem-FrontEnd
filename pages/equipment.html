@@ -27,16 +27,16 @@
                     <a class="nav-link" href="#">Field Data</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="crop.html">Crops</a>
+                    <a class="nav-link" href="/pages/crop.html">Crops</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="equipment.html">Equipment</a>
+                    <a class="nav-link" href="/pages/equipment.html">Equipment</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Vehicle</a>
+                    <a class="nav-link" href="/pages/vehicle.html">Vehicle</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Staff</a>
+                    <a class="nav-link" href="/pages//staff.html">Staff</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Logout</a>
@@ -50,7 +50,10 @@
 
             <!-- Search Bar and Add Button -->
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <input type="text" class="form-control w-50" placeholder="Search Equipment">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search by crop name...">
+                    <button onclick="search()">Search</button>
+                </div>
                 <button class="btn btn-success" data-toggle="modal" data-target="#addEquipmentModal">Add Equipment</button>
             </div>
 
