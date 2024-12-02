@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/css/adminDashboard.css">
+    <style>
+        /* Sidebar styles for responsiveness */
+.sidebar {
+    background-color: #d1fcd7;
+    color: #090909;
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(0); /* Default: visible */
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.sidebar.hidden {
+    transform: translateX(-250px); /* Move off-screen for hidden state */
+}
+
+/* Hamburger button styles */
+.hamburger-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: #1fb469;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 2000;
+    display: none; /* Hidden by default */
+    border-radius: 4px;
+}
+
+/* Show hamburger button on smaller screens */
+@media (max-width: 768px) {
+    .hamburger-btn {
+        display: block;
+    }
+
+    .main-container {
+        margin-left: 0;
+    }
+
+    .sidebar {
+        transform: translateX(-250px); /* Hidden by default on small screens */
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* Visible when active */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="profile-section text-center">
+            <img src="/img/profileimg.jpg" alt="Profile Picture">
+            <h5>Admin</h5>
+            <p>Administrator</p>
+        </div>
+        <ul class="nav flex-column">
+            
+            <li class="nav-item">
+                <a class="nav-link active" href="/pages/adminDashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pages/staff.html">Staff</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pages/vehicle.html">Vehicles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pages/equipment.html">Equipment</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pages/index.html">Logout</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Hamburger button -->
+        <button class="hamburger-btn" id="hamburgerBtn">
+            ☰
+        </button>
+
+    <!-- Main content -->
+    <div class="main-container">
+        <h1>Admin Dashboard</h1>
+        <div class="main-content">
+            <!-- Left Column: Cards -->
+            <div class="left-column">
+                <div class="card text-white" id="staffCard">
+                    <div class="card-body">
+                        <h5>Staff Members</h5>
+                        <h2 id="staffCount">0</h2>
+                    </div>
+                </div>
+                <div class="card text-white" id="vehicleCard">
+                    <div class="card-body">
+                        <h5>Vehicles</h5>
+                        <h2 id="vehicleCount">0</h2>
+                    </div>
+                </div>
+                <div class="card text-white" id="equipmentCard">
+                    <div class="card-body">
+                        <h5>Equipment</h5>
+                        <h2 id="equipmentCount">0</h2>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Right Column: Chart -->
+            <div class="right-column">
+                <h3>Staff Designation Breakdown</h>
+                <canvas id="designationChart" width="200" height="150"></canvas>
+                <div class="chart-legend">
+                    <span><div style="background-color: #1fb469;"></div> Manager</span>
+                    <span><div style="background-color: #6acb9a;"></div> Supervisor</span>
+                    <span><div style="background-color: #609e7f;"></div> Worker</span>
+                    <span><div style="background-color: #cff6e3;"></div> Clerk</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Script -->
+    <script src="/controller/adminDashboard.js"></script>
+    <script>
+        // JavaScript for Hamburger Button
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const sidebar = document.getElementById("sidebar");
+
+// Toggle sidebar visibility on button click
+hamburgerBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+});
+
+    </script>
+</body>
+</html>
