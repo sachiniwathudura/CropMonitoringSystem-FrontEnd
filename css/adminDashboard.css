@@ -1,0 +1,183 @@
+/* Reset and global styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Sidebar styling */
+.sidebar {
+    background-color: #d1fcd7;
+    color: #090909;
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar .profile-section img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.sidebar .profile-section h5 {
+    font-weight: bold;
+    color: #1e931e;
+}
+
+.sidebar .profile-section p {
+    font-size: 14px;
+    color: #4f4f4f;
+}
+
+.sidebar .nav {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar .nav-link {
+    display: block;
+    padding: 8px;
+    font-weight: 700;
+    color: #0c0c0c;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #a9e8ac;
+    color: white;
+}
+
+.sidebar .nav-link.active {
+    color: rgb(6, 5, 5);
+}
+/* Main container styling */
+.main-container {
+    margin-left: 250px; /* Sidebar width */
+    padding: 20px;
+}
+
+/* Main content styles */
+.main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    position: fixed;
+}
+
+/* Left column for cards */
+.left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between cards */
+    height: 60vh;
+}
+
+/* Individual card styles */
+.card {
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    height: 130px;
+    width: 250px;
+    
+}
+
+/* Different card colors */
+#staffCard {
+    background-color: #69ce74; /* Blue for staff */
+}
+
+#vehicleCard {
+    background-color: #28a745; /* Green for vehicles */
+}
+
+#equipmentCard {
+    background-color: #027111; /* Yellow for equipment */
+}
+
+/* Right column for chart */
+.right-column {
+flex: 2;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 20px;
+background-color: #ffffff;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+height: 80vh;
+width: 600px;
+}
+
+/* Chart canvas styling */
+canvas {
+max-width: 350px; /* Adjust size to make it compact */
+height: auto;
+margin-top: 20px; /* Add space above the chart */
+}
+
+/* Title styling */
+h4 {
+margin: 0;
+padding-bottom: 20px; /* Add spacing below the title */
+font-size: 18px;
+color: #343a40; /* Dark gray for titles */
+text-align: center;
+}
+
+/* Chart legend styling */
+.chart-legend {
+display: flex;
+flex-direction: row; /* Set items in a row */
+justify-content: center; /* Center items horizontally */
+align-items: center;
+gap: 15px; /* Add space between the items */
+margin-top: 10px;
+font-size: 14px;
+color: #343a40;
+}
+
+.chart-legend span {
+display: flex;
+align-items: center;
+}
+
+.chart-legend span div {
+width: 14px;
+height: 14px;
+margin-right: 8px;
+border-radius: 50%;
+display: inline-block;
+}
+/* Make layout responsive */
+@media (max-width: 768px) {
+    .main-container {
+        margin-left: 0;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .left-column, .right-column {
+        flex: none;
+        width: 100%;
+    }
+}
