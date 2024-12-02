@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    background-color: #d1fcd7;
+    color: #090909;
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar .profile-section img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.sidebar .profile-section h5 {
+    font-weight: bold;
+    color: #1e931e;
+}
+
+.sidebar .profile-section p {
+    font-size: 14px;
+    color: #4f4f4f;
+}
+
+.sidebar .nav {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar .nav-link {
+    display: block;
+    padding: 8px;
+    font-weight: 700;
+    color: #0c0c0c;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #a9e8ac;
+    color: white;
+}
+
+.main-container {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.card {
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    height: 130px;
+    width: 250px;
+    margin-left: 40px;
+}
+
+.card:nth-child(1) { background-color: #69ce74; }
+.card:nth-child(2) { background-color: #28a745; }
+.card:nth-child(3) { background-color: #027111; }
+
+.chart-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.chart-container h5 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+#pieChart{
+    max-width: 600px; /* Set a smaller width */
+    max-height: 350px; /* Set a smaller height */
+    margin: 0 auto; /* Center the chart */
+    padding-right: 30px;
+}
+#lineChart {
+    max-width: 900px; /* Set a smaller width */
+    max-height: 300px; /* Set a smaller height */
+    margin: 0 auto; /* Center the chart */
+    padding-left: 40px;
+}
