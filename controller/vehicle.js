@@ -113,3 +113,6 @@ function resetForm() {
     $('#vehicleForm')[0].reset();
     selectedRow = null;
 }
+function goBack() {
+    window.history.back();
+}
