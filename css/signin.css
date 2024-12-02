@@ -1,0 +1,109 @@
+body {
+    /* background-color: #def8dc; */
+    font-family: Arial, sans-serif;
+    background-image: url('/img/siginup2.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+}
+/* .container {
+    max-width: 900px;
+    max-height:800px;
+    margin-top: 80px;
+    background-color: #52a252;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+} */
+.custom-container {
+    max-width: 950px; /* Adjust the maximum width as desired */
+    padding: 45px;    /* Optional: adjust padding */
+    max-height:850px;
+    position: fixed;
+
+}
+#signin-img{
+    width: 250px;
+    height: 400px; 
+    margin: 40px 50px 8px 50px; 
+    display: block; 
+    border-radius: 8px; 
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(55px 55px 45px#6cd776); 
+    
+} 
+.left-section, .right-section {
+    padding: 30px;
+}
+.left-section {
+    background-color: #f5fffa;
+    text-align: center;
+}
+.right-section {
+    background-color: #d1f9df;
+}
+.btn-custom {
+    background-color: #087a17;
+    margin-top: 15px;
+    color: #fff;
+}
+.btn-custom:hover {
+    background-color: #32b74d;
+    color: black;
+}
+.btn-move{
+    background-color: #c0facc;
+    color: black;
+    border: 2px;
+    border-radius: 7px;
+}
+.btn-move:hover{
+    background-color: #087a17;
+    color: #fff;
+}
+#welcome-title{
+    text-align: center;
+
+}
+#company-name{
+    text-align: center;
+    /*font-style: revert;*/
+    padding-bottom: 10px;
+}
+#form{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.form-label{
+    font-size: 15px;
+}
+.already-account {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.already-account a {
+    color: #333333;
+    text-decoration: none;
+    font-weight: 550;
+}
+
+.already-account a:hover {
+    text-decoration: underline;
+    color: #02480b;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+    .right-section {
+        border-top: 1px solid #ddd;
+    }
+}
