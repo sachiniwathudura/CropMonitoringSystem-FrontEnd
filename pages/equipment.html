@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipment Management</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/equipment.css">
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
@@ -65,10 +64,8 @@
                     <th>Equipment Code</th>
                     <th>Equipment Name</th>
                     <th>Type</th>
-                    <th>Manufacturer</th>
-                    <th>Purchase Date</th>
-                    <th>Details</th>
-                    <th>Image</th>
+                    <th>Status</th>
+                
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -106,29 +103,21 @@
                             <label for="type">Type</label>
                             <input type="text" class="form-control" id="type" placeholder="Enter Type">
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="manufacturer">Manufacturer</label>
-                            <input type="text" class="form-control" id="manufacturer" placeholder="Enter Manufacturer">
-                        </div>
+                        
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="purchaseDate">Purchase Date</label>
-                            <input type="date" class="form-control" id="purchaseDate">
-                        </div>
+                        
                         <div class="form-group col-md-6">
                             <label for="details">Details</label>
                             <input type="text" class="form-control" id="details" placeholder="Enter Details">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="equipmentImage">Image</label>
-                        <input type="file" class="form-control-file" id="equipmentImage">
-                    </div>
+                    
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="saveEquipment()">Save</button>
+                
+                <button type="button" class="btn btn-primary"onclick="saveEquipment()">Save</button>
                 <button type="button" class="btn btn-info" onclick="updateEquipment()">Update</button>
                 <button type="button" class="btn btn-warning" onclick="getAllEquipment()">Get All</button>
                 <button type="button" class="btn btn-danger" onclick="deleteEquipment()">Delete</button>
@@ -140,6 +129,6 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-<script src="/controller/equipment.js"></script>
+<script src="/js/equipment.js"></script>
 </body>
 </html>
