@@ -1,7 +1,7 @@
 /* Sidebar Styles */
 body{
-    /* background-color: #d1fcd7; */
-    background-image: url('/img/paddy.jpg');
+    background-color: #d1fcd7;
+    /* background-image: url('/img/paddy.jpg'); */
     background-size: cover; /* Ensures the image covers the entire screen */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat
