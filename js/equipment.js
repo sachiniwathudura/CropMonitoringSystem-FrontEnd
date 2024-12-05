@@ -148,9 +148,9 @@ function getAllEquipment() {
                     tableBody += `<tr>
                         <td><input type="checkbox" class="equipment-checkbox" data-id="${equipment.id}"></td>
                         <td>${equipment.equipmentCode}</td>
-                        <td>${equipment.equipmentName}</td>
-                        <td>${equipment.status}</td>
+                        <td>${equipment.name}</td>
                         <td>${equipment.type}</td>
+                        <td>${equipment.status}</td>
                     </tr>`;
                 });
                 $('.tBody').html(tableBody);
@@ -164,51 +164,66 @@ function getAllEquipment() {
 
 // Get form data
 function getFormData() {
+    const equipmentCode = $('#equipmentCode').val();
+    const name = $('#name').val();
+    const type = $('#type').val();
+    const status = $('#status').val();
+    
+
+    if (!equipmentCode || !name || !status || !type) {
+        alert("Please fill in all required fields.");
+        return null;
+    }
+
     return {
-        equipmentCode: $('#equipmentCode').val(),
-        equipmentName: $('#equipmentName').val(),
-        status: $('#status').val(),
-        type: $('#type').val()
+        equipmentCode: equipmentCode,
+        name: name,
+        type: type,
+        status: status
+
+        
     };
 }
 
 // Reset form after save/update
 function resetForm() {
     $('#equipmentCode').val('');
-    $('#equipmentName').val('');
-    $('#status').val('');
+    $('#name').val('');
     $('#type').val('');
+    $('#status').val('');
+    
 }
 
 // Search equipment
 function search() {
-    const searchQuery = $('#searchInput').val();
-    const token = checkJwtToken();  
+    const query = $('#searchInput').val().toLowerCase();
 
-    if (searchQuery && token) {
-        $.ajax({
-            url: `http://localhost:8080/cropMonitor/api/v1/equipment/search?query=${searchQuery}`,
-            method: "GET",
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            },
-            success: function (data) {
-                let tableBody = '';
-                data.forEach(equipment => {
-                    tableBody += `<tr>
-                        <td><input type="checkbox" class="equipment-checkbox" data-id="${equipment.id}"></td>
-                        <td>${equipment.equipmentCode}</td>
-                        <td>${equipment.equipmentName}</td>
-                        <td>${equipment.status}</td>
-                        <td>${equipment.type}</td>
-                    </tr>`;
-                });
-                $('.tBody').html(tableBody);
-            },
-            error: function () {
-                alert("Error searching equipment.");
-            }
-        });
-    }
+    $('.tBody tr').each(function () {
+        const name = $(this).find('td:nth-child(3)').text().toLowerCase();
+        if (name.includes(query)) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+    });
 }
+
+
+// Event listener for selecting equipment checkboxes
+$(document).on('change', '.equipment-checkbox', function () {
+    const equipmentId = $(this).data('id');
+    const isChecked = $(this).is(':checked');
+
+    if (isChecked) {
+        $('#equipmentCode').val(equipmentId);
+       
+    } else {
+        $('#equipmentCode').val('');
+    }
+});
+
+// Initialize the equipment table on page load
+$(document).ready(function () {
+    getAllEquipment();
+});
+
