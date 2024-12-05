@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitoring Log Management</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
@@ -13,13 +14,13 @@
         <!-- Sidebar -->
         <div class="col-md-3 col-lg-2 bg-light sidebar">
             <div class="profile-section text-center mt-4">
-                <img src="/img/profileimg.jpg" alt="Profile Picture" class="rounded-circle" width="60">
-                <h5>Sachini</h5>
+                <img src="/assets/Images/profileimg.jpg" alt="Profile Picture" class="rounded-circle" width="60">
+                <h5>Sasoba</h5>
                 <p>Manager</p>
             </div>
             <ul class="nav flex-column mt-4">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dashboard</a>
+                    <a class="nav-link" href="/pages/dashboards/managerDashboard.html">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/pages/field.html">Field</a>
@@ -37,7 +38,7 @@
                     <a class="nav-link" href="/pages/monitoringLog.html">Monitoring Logs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="/pages/index.html">Logout</a>
                 </li>
             </ul>
         </div>
@@ -54,8 +55,8 @@
 
             <!-- Log Table -->
             <table class="table table-bordered">
-                <thead class="thead-light">
-                <tr>
+                <thead id="thead">               
+                <tr class="thead">
                     <th>Select</th>
                     <th>Log Code</th>
                     <th>Log Date</th>
@@ -65,7 +66,7 @@
                     <th>Actions</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody class="tBody">
                 <!-- Monitoring Log rows will be dynamically added here -->
                 </tbody>
             </table>
@@ -112,6 +113,8 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" onclick="saveLog()">Save</button>
                 <button type="button" class="btn btn-info" onclick="updateLog()">Update</button>
+                <button class="btn btn-danger btn-sm" onclick="deleteLog()">Delete</button>
+                <button type="button" class="btn btn-success" onclick="getAllLogs()">Get All</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -123,4 +126,3 @@
 <script src="/js/monitoringLog.js"></script>
 </body>
 </html>
- 

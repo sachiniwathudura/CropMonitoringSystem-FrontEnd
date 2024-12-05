@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Field Management</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/css/main.css">
     
 </head>
@@ -16,13 +16,13 @@
         <!-- Sidebar -->
         <div class="col-md-3 col-lg-2 bg-light sidebar">
             <div class="profile-section text-center mt-4">
-                <img src="/img/profileimg.jpg" alt="Profile Picture" class="rounded-circle" width="60">
-                <h5>Sachini</h5>
+                <img src="/assets/Images/profileimg.jpg" alt="Profile Picture" class="rounded-circle" width="60">
+                <h5>Sasoba</h5>
                 <p>Manager</p>
             </div>
             <ul class="nav flex-column mt-4">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dashboard</a>
+                    <a class="nav-link" href="/pages/dashboards/adminDashboard.html">Dashboard</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/pages/field.html">Field Data</a>
@@ -40,7 +40,7 @@
                     <a class="nav-link" href="/pages/staff.html">Staff</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="/pages/index.html">Logout</a>
                 </li>
             </ul>
         </div>
@@ -57,8 +57,8 @@
 
             <!-- Field Table -->
             <table class="table table-bordered">
-                <thead class="thead-light">
-                <tr>
+                <thead id="thead">
+                <tr class="thead">
                     <th>Select</th>
                     <th>Field Code</th>
                     <th>Field Name</th>
@@ -70,7 +70,7 @@
                     <th>Actions</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody class="tBody">
                 <!-- Field data rows will go here -->
                 </tbody>
             </table>
@@ -106,18 +106,22 @@
                             <input type="number" step="0.01" class="form-control" id="extentSize" placeholder="Enter Extent Size">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="fieldLocation">Field Location</label>
-                            <input type="text" class="form-control" id="fieldLocation" placeholder="Enter Field Location">
+                            <label for="latitude">Latitude</label>
+                            <input type="text" class="form-control" id="latitude" placeholder="Enter Latitude">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="longitude">Longitude</label>
+                            <input type="text" class="form-control" id="longitude" placeholder="Enter Longitude">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="img1">Image 1</label>
-                            <input type="file" class="form-control-file" id="img1">
+                            <label for="image1">Image 1</label>
+                            <input type="file" class="form-control-file" id="image1">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="img2">Image 2</label>
-                            <input type="file" class="form-control-file" id="img2">
+                            <label for="image2">Image 2</label>
+                            <input type="file" class="form-control-file" id="image2">
                         </div>
                     </div>
                     <div class="form-group">

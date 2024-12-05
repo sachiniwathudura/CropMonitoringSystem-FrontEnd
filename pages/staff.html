@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Management</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
@@ -56,7 +56,7 @@
 
             <!-- Staff Table -->
             <table class="table table-bordered">
-                <thead class="thead-light">
+                <thead class="thead">
                 <tr>
                     <th>Select</th>
                     <th>Staff ID</th>
@@ -70,10 +70,8 @@
                     <th>Email</th>
                     <th>Equipment Code</th>
                     <th>Vehicle Code</th>
-                    <th>state</th>
-                    <th>city</th>
-                    <th>lane</th>
-                    <th>buildingNo</th>
+                    <th>Address</th>
+                    <th>Postal code</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -121,9 +119,9 @@
                         <div class="form-group col-md-6">
                             <label for="gender">Gender</label>
                             <select class="form-control" id="gender">
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">Other</option>
+                                <option value="Male">MALE</option>
+                                <option value="Female">FEMALE</option>
+                                <option value="Other">OTHER</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
@@ -146,28 +144,15 @@
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="email" placeholder="Enter Email">
                         </div>
+                    
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="buildingNo">buildingNo</label>
-                                <input type="text" class="form-control" id="buildingNo" placeholder="Enter Build Number">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="city">City</label>
-                                <input type="text" class="form-control" id="city" placeholder="Enter City">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="lane">Lane</label>
-                                <input type="text" class="form-control" id="lane" placeholder="Enter Lane">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" id="address" placeholder="Enter address">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="postalCode">postal Code</label>
                                 <input type="text" class="form-control" id="postalCode" placeholder="Postal Code">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="state">State</label>
-                                <input type="text" class="form-control" id="state" placeholder="State">
                             </div>
                         </div>
                         <div class="form-group col-md-6">
