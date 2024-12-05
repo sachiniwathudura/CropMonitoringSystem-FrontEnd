@@ -36,10 +36,8 @@ function editStaff(td) {
     $('#email').val($(selectedRow).find("td:eq(9)").text());
     $('#equipmentCode').val($(selectedRow).find("td:eq(10)").text());
     $('#vehicleCode').val($(selectedRow).find("td:eq(11)").text());
-    $('#buildingNo').val($(selectedRow).find("td:eq(12)").text());
-    $('#city').val($(selectedRow).find("td:eq(13)").text());
-    $('#lane').val($(selectedRow).find("td:eq(14)").text());
-    $('#postalCode').val($(selectedRow).find("td:eq(15)").text());
+    $('#address').val($(selectedRow).find("td:eq(12)").text());
+    $('#postalCode').val($(selectedRow).find("td:eq(13)").text());
     $('#addStaffModal').modal('show');
 }
 
@@ -90,9 +88,7 @@ function getAllStaff() {
                         <td>${staff.email}</td>
                         <td>${staff.equipmentCode}</td>
                         <td>${staff.vehicleCode}</td>
-                        <td>${staff.buildingNo}</td>
-                        <td>${staff.city}</td>
-                        <td>${staff.lane}</td>
+                        <td>${staff.address}</td>
                         <td>${staff.postalCode}</td>
                         <td>
                             <button class="btn btn-warning btn-sm" onclick="editStaff(this)">Edit</button>
@@ -141,9 +137,7 @@ function getStaffData() {
         email: $('#email').val(),
         equipmentCode: $('#equipmentCode').val(),
         vehicleCode: $('#vehicleCode').val(),
-        buildingNo: $('#buildingNo').val(),
-        city: $('#city').val(),
-        lane: $('#lane').val(),
+        address: $('#address').val(),
         postalCode: $('#postalCode').val() // Include postal code in staff data
     };
 }
