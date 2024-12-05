@@ -43,11 +43,16 @@ body {
 .sidebar .nav {
     list-style-type: none;
     padding-left: 0;
+
 }
 
 .sidebar .nav-link {
     display: block;
-    padding: 8px;
+    /* padding-: 20px; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    
     font-weight: 700;
     color: #0c0c0c;
     text-decoration: none;
@@ -88,7 +93,7 @@ body {
 
 /* Individual card styles */
 .card {
-    color: white;
+    color: black;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -100,15 +105,19 @@ body {
 
 /* Different card colors */
 #staffCard {
-    background-color: #69ce74; /* Blue for staff */
+    background-color: #4995d3; 
+    /* border-radius: 10px;
+    border-color: #027111;
+    border-width: 3px;
+    color: black; */
 }
 
 #vehicleCard {
-    background-color: #28a745; /* Green for vehicles */
+    background-color: #fa6f05; 
 }
 
 #equipmentCard {
-    background-color: #027111; /* Yellow for equipment */
+    background-color: #b91212; 
 }
 
 /* Right column for chart */
