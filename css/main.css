@@ -16,7 +16,9 @@ body{
 .sidebar .nav-link {
     color: #1e931e;
     font-weight: 700;
-    padding: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
     transition: background-color 0.3s ease;
 }
 
@@ -36,7 +38,7 @@ body{
 
 .thead{
     background-color: #52a252;
-    color: #0060c2;
+    color: #070707;
 }
 .tBody{
     background-color: #f4faf4;
